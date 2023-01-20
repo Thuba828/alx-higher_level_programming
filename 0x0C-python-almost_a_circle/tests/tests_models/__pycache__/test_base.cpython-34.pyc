@@ -1,0 +1,693 @@
+î 
+’‚Àc9H  ã                @   s3   d  Z  d  d  l  Z  d  d  l  Z  d  d  l  m  Z   d  d  l  m  Z   d  d  l m  Z   Gd  d „  d e  j	 ƒ  Z
+ Gd  d	 „  d	 e  j	 ƒ  Z
+ Gd
+ d
+ „  d
+ e  j	 ƒ  Z 
+ Gd 
+ d
+ „  d
+ e  j	 ƒ  Z
+ Gd 
+ d  „  d  e  j	 ƒ  Z 
+ Gd  d  „  d  e  j	 ƒ  Z  Gd  d  „  d  e  j	 ƒ  Z  Gd  d  „  d  e  j	 ƒ  Z  e  d  k  r/ e  j  ƒ   n  d  S) af   Defines unittests for base.py.
+
+Unittest classes:
+    TestBase_instantiation - line 21
+    TestBase_to_json_string - line 108
+    TestBase_save_to_file - line 154
+    TestBase_from_json_string - line 232
+    TestBase_create - line 286
+    TestBase_load_from_file - line 338
+    TestBase_save_to_file_csv - line 404
+    TestBase_load_from_file_csv - line 482
+é    N) Ú Base) Ú	Rectangle) Ú Squarec                @   s*   e  Z  d  Z  d  Z  d  d  „  Z  d  d  „  Z  d  d „  Z  d  d	 „  Z d
+ d
+ „  Z  d 
+ d
+ „  Z	 d 
+ d  „  Z
+ d  d  „  Z
+ d  d  „  Z 
+ d  d  „  Z
+ d  d  „  Z 
+ d  d  „  Z  d  d  „  Z  d  d  „  Z  d  d¬ „  Z  d  d! „  Z  d" d# „  Z  d$ d% „  Z  d& d' „  Z  d( d) „  Z  d* d+ „  Z  d, d- „  Z  d. d/ „  Z  d0 S)1Ú TestBase_instantiationz6Unittests for testing instantiation of the Base class.c                C   s0   t  ƒ  }  t  ƒ  }  |  j  |  j  |  j  d   ƒ   d  S) Né    ) r    Ú
+assertEqualÚ id) Ú selfÚ b1Ú b2© r 
+   úX/alx-higher_level_programming/0x0C-python-almost_a_circle/tests/test_models/test_base.pyÚ
+test_no_arg    s      	 	 z"TestBase_instantiation.test_no_argc                C   s9   t  ƒ  }  t  ƒ  }  t  ƒ  }  |  j  |  j  |  j  d   ƒ   d  S) Né    ) r    r   r    ) r	   r
+   r
+   Ú b3r 
+   r 
+   r
+   Ú test_three_bases    s      	 	 	 z'TestBase_instantiation.test_three_basesc                C   s6   t  d  ƒ  }  t  d  ƒ  }  |  j  |  j  |  j  d   ƒ   d  S) Nr    ) r    r   r    ) r	   r
+   r
+   r 
+   r 
+   r
+   Ú 
+test_None_id#   s       
+  
+ z#TestBase_instantiation.test_None_idc                C   s    |  j  d  t  d  ƒ  j  ƒ   d  S) Né 
+   ) r   r    r    ) r	   r 
+   r 
+   r
+   Ú 
+test_unique_id(   s      z%TestBase_instantiation.test_unique_idc                C   s<   t  ƒ  }  t  d  ƒ  }  t  ƒ  }  |  j  |  j  |  j  d   ƒ   d  S) Nr    r    ) r    r   r    ) r	   r
+   r
+   r    r 
+   r 
+   r
+   Ú!test_nb_instances_after_unique_id+   s      	  
+ 	 z8TestBase_instantiation.test_nb_instances_after_unique_idc                C   s,   t  d  ƒ  }  d  |  _  |  j  d  |  j  ƒ   d  S) Nr    é    ) r    r    r   ) r	   Ú br 
+   r 
+   r
+   Ú 
+test_id_public1   s       
+ 	 z%TestBase_instantiation.test_id_publicc            
+   C   s-   |  j  t  ƒ     t  t  d  ƒ  j  ƒ   Wd  QXd  S) Nr    ) Ú 
+assertRaisesÚ 
+AttributeErrorÚ printr    Z%_TestBase_instantiation__nb_instances) r	   r 
+   r 
+   r
+   Ú test_nb_instances_private6   s        z0TestBase_instantiation.test_nb_instances_privatec                C   s    |  j  d  t  d  ƒ  j  ƒ   d  S) NZ hello) r   r    r    ) r	   r 
+   r 
+   r
+   Ú
+test_str_id:   s      z"TestBase_instantiation.test_str_idc                C   s    |  j  d  t  d  ƒ  j  ƒ   d  S) Ng       @) r   r    r    ) r	   r 
+   r 
+   r
+   Ú
+test_float_id=   s      z$TestBase_instantiation.test_float_idc                C   s)   |  j  t  d  ƒ  t  t  d  ƒ  ƒ  j  ƒ   d  S) Né    ) r   Úcomplexr    r    ) r	   r 
+   r 
+   r
+   Ú test_complex_id@   s      z&TestBase_instantiation.test_complex_idc                C   s9   |  j  i  d  d  6d  d  6t  i  d  d  6d  d  6ƒ  j  ƒ   d  S) Nr    Ú ar    r    ) r   r    r    ) r	   r 
+   r 
+   r
+   Ú 
+test_dict_idC   s      z#TestBase_instantiation.test_dict_idc                C   s    |  j  d  t  d  ƒ  j  ƒ   d  S) NT) r   r    r    ) r	   r 
+   r 
+   r
+   Ú 
+test_bool_idF   s      z#TestBase_instantiation.test_bool_idc                C   s/   |  j  d  d  d  g  t  d  d  d  g  ƒ  j  ƒ   d  S) Nr    r    é    ) r   r    r    ) r	   r 
+   r 
+   r
+   Ú 
+test_list_idI   s      z#TestBase_instantiation.test_list_idc                C   s    |  j  d  t  d  ƒ  j  ƒ   d  S) Nr    r    ) r    r    ) r    r    ) r   r    r    ) r	   r 
+   r 
+   r
+   Ú
+test_tuple_idL   s      z$TestBase_instantiation.test_tuple_idc                C   s/   |  j  d  d  d  h  t  d  d  d  h  ƒ  j  ƒ   d  S) Nr    r    r%   ) r   r    r    ) r	   r 
+   r 
+   r
+   Ú
+test_set_idO   s      z"TestBase_instantiation.test_set_idc               C   s;   |  j  t  d  d  d  h  ƒ  t  t  d  d  d  h  ƒ  ƒ  j  ƒ   d  S) Nr    r    r%   ) r   Ú	frozensetr    r    ) r	   r 
+   r 
+   r
+   Ú test_frozenset_idR   s      z(TestBase_instantiation.test_frozenset_idc                C   s)   |  j  t  d  ƒ  t  t  d  ƒ  ƒ  j  ƒ   d  S) Nr¬   ) r   Ú ranger    r    ) r	   r 
+   r 
+   r
+   Ú
+test_range_idU   s      z$TestBase_instantiation.test_range_idc                C   s    |  j  d  t  d  ƒ  j  ƒ   d  S) Ns    Python) r   r    r    ) r	   r 
+   r 
+   r
+   Ú
+test_bytes_idX   s      z$TestBase_instantiation.test_bytes_idc                C   s)   |  j  t  d  ƒ  t  t  d  ƒ  ƒ  j  ƒ   d  S) Ns    abcefg) r   Ú	bytearrayr    r    ) r	   r 
+   r 
+   r
+   Ú test_bytearray_id[   s      z(TestBase_instantiation.test_bytearray_idc                C   s)   |  j  t  d  ƒ  t  t  d  ƒ  ƒ  j  ƒ   d  S) Ns    abcefg) r   Ú
+memoryviewr    r    ) r	   r 
+   r 
+   r
+   Ú test_memoryview_id^   s      z)TestBase_instantiation.test_memoryview_idc                C   s)   |  j  t  d  ƒ  t  t  d  ƒ  ƒ  j  ƒ   d  S) NÚ inf) r   Ú floatr    r    ) r	   r 
+   r 
+   r
+   Ú
+test_inf_ida   s      z"TestBase_instantiation.test_inf_idc                C   s)   |  j  t  d  ƒ  t  t  d  ƒ  ƒ  j  ƒ   d  S) NÚ nan) Ú 
+assertNotEqualr3   r    r    ) r	   r 
+   r 
+   r
+   Ú
+test_NaN_idd   s      z"TestBase_instantiation.test_NaN_idc            
+   C   s'   |  j  t  ƒ     t  d  d  ƒ   Wd  QXd  S) Nr    r    ) r    Ú	TypeErrorr    ) r	   r 
+   r 
+   r
+   Ú
+test_two_argsg   s        z$TestBase_instantiation.test_two_argsN) Ú __name__Ú
+__module__Ú 
+__qualname__Ú__doc__r 
+   r    r    r    r    r    r    r    r    r!   r#   r$   r&   r'   r(   r*   r,   r-   r/   r1   r4   r7   r9   r 
+   r 
+   r 
+   r
+   r        s0    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ r    c                @   sŽ   e  Z  d  Z  d  Z  d  d  „  Z  d  d  „  Z  d  d „  Z  d  d	 „  Z d
+ d
+ „  Z  d 
+ d
+ „  Z	 d 
+ d  „  Z
+ d  d  „  Z
+ d  d  „  Z 
+ d  d  „  Z
+ d  S) Ú TestBase_to_json_stringz:Unittests for testing to_json_string method of Base class.c                C   sD   t  d  d  d  d  d  ƒ  }  |  j  t  t  t  j  |  j  ƒ  g  ƒ  ƒ  ƒ   d  S) Né
+   é   r    é    é    )r    r   Ú strÚ typer    Ú 
+to_json_stringÚ
+to_dictionary) r	   Ú rr 
+   r 
+   r
+   Ú"test_to_json_string_rectangle_typeo   s        z:TestBase_to_json_string.test_to_json_string_rectangle_typec                C   sG   t  d  d  d  d  d  ƒ  }  |  j  t  t  j  |  j  ƒ  g  ƒ  ƒ  d  k  ƒ   d  S)Nr?   r@   r    rA   rB   é5   ) r    Ú
+assertTrueÚ lenr    rE   rF   ) r	   rG   r 
+   r 
+   r
+   Ú&test_to_json_string_rectangle_one_dicts   s        z>TestBase_to_json_string.test_to_json_string_rectangle_one_dictc                C   sn   t  d  d  d  d  d  ƒ  }  t  d  d  d  d  d ƒ  }  |  j  ƒ  |  j  ƒ  g  }  |  j  t  t  j  |  ƒ  ƒ  d  k  ƒ   d  S)	Nr    r%   r-   é    é    r    r    éj   ) r    rF   rJ   rK   r    rE   ) r	   Ú r1Ú r2Ú
+list_dictsr 
+   r 
+   r
+   Ú'test_to_json_string_rectangle_two_dictsw   s            z?TestBase_to_json_string.test_to_json_string_rectangle_two_dictsc                C   sA   t  d  d  d  d  ƒ  }  |  j  t  t  t  j  |  j  ƒ  g  ƒ  ƒ  ƒ   d  S) Nr?   r    r%   rN   )r    r   rC   rD   r    rE   rF   ) r	   Ú sr 
+   r 
+   r
+   Ú-test_to_json_string_square_type}   s        z7TestBase_to_json_string.test_to_json_string_square_typec                C   sD   t  d  d  d  d  ƒ  }  |  j  t  t  j  |  j  ƒ  g  ƒ  ƒ  d  k  ƒ   d  S) Nr?   r    r%   rN   é'   ) r    rJ   rK   r    rE   rF   ) r	   rT   r 
+   r 
+   r
+   Ú#test_to_json_string_square_one_dict   s        z;TestBase_to_json_string.test_to_json_string_square_one_dictc                C   sh   t  d  d  d  d  ƒ  }  t  d  d  d  d  ƒ  }  |  j  ƒ  |  j  ƒ  g  }  |  j  t  t  j  |  ƒ  ƒ  d k  ƒ   d  S) Nr?   r    r%   rN   r-   é    éN   ) r    rF   rJ   rK   r    rE   ) r	   Ú s1Ú s2rR   r 
+   r 
+   r
+   Ú$test_to_json_string_square_two_dicts…   s            z<TestBase_to_json_string.test_to_json_string_square_two_dictsc                C   s    |  j  d  t  j  g  ƒ  ƒ   d  S) Nz []) r   r    rE   ) r	   r 
+   r 
+   r
+   Ú test_to_json_string_empty_list‹   s      z6TestBase_to_json_string.test_to_json_string_empty_listc                C   s    |  j  d  t  j  d  ƒ  ƒ   d  S) Nz []) r   r    rE   ) r	   r 
+   r 
+   r
+   Ú test_to_json_string_noneŽ   s      z0TestBase_to_json_string.test_to_json_string_nonec                C   s$   |  j  t  ƒ     t  j  ƒ   Wd  QXd  S) N) r    r8   r    rE   ) r	   r 
+   r 
+   r
+   Ú test_to_json_string_no_args‘   s        z3TestBase_to_json_string.test_to_json_string_no_argsc            
+   C   s*   |  j  t  ƒ     t  j  g  d  ƒ   Wd  QXd  S) Nr    ) r    r8   r    rE   ) r	   r 
+   r 
+   r
+   Ú%test_to_json_string_more_than_one_arg•   s        z=TestBase_to_json_string.test_to_json_string_more_than_one_argN) 
+r:   r;   r<   r=   rH   rL   rS   rU   rW   r\   r]   r^   r_   r`   r 
+   r 
+   r 
+   r
+   r>   l   s     
+    
+  
+  
+  
+  
+  
+  
+  
+  
+ r>   c                @   s    e  Z  d  Z  d  Z  e  d  d  „  ƒ  Z  d  d  „  Z  d  d „  Z d  d	 „  Z  d
+ d
+ „  Z	 d 
+ d
+ „  Z
+ d 
+ d  „  Z
+ d  d  „  Z 
+ d  d  „  Z
+ d  d  „  Z 
+ d  d  „  Z  d  S) Ú TestBase_save_to_filez8Unittests for testing save_to_file method of Base class.c                C   sv   y  t  j  d  ƒ   Wn   t  k
+ r%    Yn  Xy  t  j  d  ƒ   Wn   t  k
+ rK    Yn  Xy  t  j  d  ƒ   Wn   t  k
+ rq    Yn  Xd  S) z Delete any created files.z 
+Rectangle.jsonz
+Square.jsonz	Base.jsonN) Ú osÚ removeÚIOError) r	   r 
+   r 
+   r
+   Ú tearDown   s          
+       
+       
+ z TestBase_save_to_file.tearDownc            
+   C   sc   t  d  d  d  d  d  ƒ  }  t  j  |  g  ƒ   t  d  d ƒ  & }  |  j  t  |  j  ƒ  ƒ  d  k  ƒ   Wd  QXd  S)	Nr?   r@   r    rA   r¬   z 
+Rectangle.jsonrG   rI   ) r    Ú 
+save_to_fileÚ openrJ   rK   Ú read) r	   rG   Ú fr 
+   r 
+   r
+   Ú-test_save_to_file_one_rectangle­   s            z5TestBase_save_to_file.test_save_to_file_one_rectanglec            
+   C   s~   t  d  d  d  d  d  ƒ  }  t  d  d  d d  d  ƒ  }  t  j  |  |  g  ƒ   t  d	 d
+ ƒ  & }  |  j  t  |  j  ƒ  ƒ  d
+ k  ƒ   Wd  QXd  S) 
+Nr?   r@   r    rA   r¬   rN   r    r%   z 
+Rectangle.jsonrG   éi   ) r    rf   rg   rJ   rK   rh   ) r	   rP   rQ   ri   r 
+   r 
+   r
+   Ú test_save_to_file_two_rectangles³   s
+             z6TestBase_save_to_file.test_save_to_file_two_rectanglesc            
+   C   s`   t  d  d  d  d  ƒ  }  t  j  |  g  ƒ   t  d  d  ƒ  & }  |  j  t  |  j  ƒ  ƒ  d k  ƒ   Wd  QXd  S) Nr?   r@   r    rA   z
+Square.jsonrG   rV   ) r    rf   rg   rJ   rK   rh   ) r	   rT   ri   r 
+   r 
+   r
+   Ú test_save_to_file_one_squareº   s            z2TestBase_save_to_file.test_save_to_file_one_squarec            
+   C   sx   t  d  d  d  d  ƒ  }  t  d  d  d  d  ƒ  }  t  j  |  |  g  ƒ   t  d d  ƒ  & }  |  j  t  |  j  ƒ  ƒ  d	 k  ƒ   Wd  QXd  S)
+Nr?   r@   r    rA   r    r%   z
+Square.jsonrG   éM   ) r    rf   rg   rJ   rK   rh   ) r	   rZ   r[   ri   r 
+   r 
+   r
+   Ú test_save_to_file_two_squaresÀ   s
+             z3TestBase_save_to_file.test_save_to_file_two_squaresc            
+   C   s`   t  d  d  d  d  ƒ  }  t  j  |  g  ƒ   t  d  d  ƒ  & }  |  j  t  |  j  ƒ  ƒ  d k  ƒ   Wd  QXd  S) Nr?   r@   r    rA   z	Base.jsonrG   rV   )r    r    rf   rg   rJ   rK   rh   ) r	   rT   ri   r 
+   r 
+   r
+   Ú'test_save_to_file_cls_name_for_filenameÇ   s            z=TestBase_save_to_file.test_save_to_file_cls_name_for_filenamec            
+   C   s…   t  d  d  d  d  ƒ  }  t  j  |  g  ƒ   t  d  d  d  d  ƒ  }  t  j  |  g  ƒ   t  d d  ƒ  & }  |  j  t  |  j  ƒ  ƒ  d  k  ƒ   Wd  QXd  S)	Né	   r    rV   r?   r@   rA   z
+Square.jsonrG   ) r    rf   rg   rJ   rK   rh   ) r	   rT   ri   r 
+   r 
+   r
+   Ú test_save_to_file_overwriteÍ   s 
+               z1TestBase_save_to_file.test_save_to_file_overwritec            
+   C   s?   t  j  d  ƒ   t  d  d  ƒ    }  |  j  d  |  j  ƒ  ƒ   Wd  QXd  S) Nz
+Square.jsonrG   z []) r    rf   rg   r   rh   ) r	   ri   r 
+   r 
+   r
+   Ú test_save_to_file_NoneÕ   s      
+   z,TestBase_save_to_file.test_save_to_file_Nonec            
+   C   s?   t  j  g  ƒ   t  d  d  ƒ    }  |  j  d  |  j  ƒ  ƒ   Wd  QXd  S) Nz
+Square.jsonrG   z []) r    rf   rg   r   rh   ) r	   ri   r 
+   r 
+   r
+   Ú test_save_to_file_empty_listÚ   s      
+   z2TestBase_save_to_file.test_save_to_file_empty_listc                C   s$   |  j  t  ƒ     t  j  ƒ   Wd  QXd  S) N) r    r8   r    rf   ) r	   r 
+   r 
+   r
+   Ú test_save_to_file_no_argsß   s        z/TestBase_save_to_file.test_save_to_file_no_argsc            
+   C   s*   |  j  t  ƒ     t  j  g  d  ƒ   Wd  QXd  S) Nr    ) r    r8   r    rf   ) r	   r 
+   r 
+   r
+   Ú#test_save_to_file_more_than_one_argã   s        z9TestBase_save_to_file.test_save_to_file_more_than_one_argN) r:   r;   r<   r=   Ú
+classmethodre   rj   rl   rm   ro   rp   rr   rs   rt   ru   rv   r 
+   r 
+   r 
+   r
+   ra   š   s     
+      
+  
+ 
+  
+ 
+  
+  
+  
+  
+ ra   c                @   s‚   e  Z  d  Z  d  Z  d  d  „  Z  d  d  „  Z  d  d „  Z  d  d	 „  Z d
+ d
+ „  Z  d 
+ d
+ „  Z	 d 
+ d  „  Z
+ d  d  „  Z
+ d  d  „  Z 
+ d  S) Ú TestBase_from_json_stringz<Unittests for testing from_json_string method of Base class.c                C   sV   i  d  d  6d  d  6d  d  6g  }  t  j  |  ƒ  }  t  j  |  ƒ  }  |  j  t  t  |  ƒ  ƒ   d  S)NéY   r    r?   Ú widthrN   Ú height) r    rE   Ú from_json_stringr   Ú listrD   ) r	   Ú
+list_inputÚ json_list_inputÚ
+list_outputr 
+   r 
+   r
+   Ú test_from_json_string_typeë   s            z4TestBase_from_json_string.test_from_json_string_typec                C   sW   i  d  d  6d  d  6d  d  6d d  6g  }  t  j  |  ƒ  }  t  j  |  ƒ  }  |  j  |  |  ƒ   d  S)	Nry   r    r?   rz   rN   r{   r@   Ú x) r    rE   r|   r   ) r	   r~   r   r€   r 
+   r 
+   r
+   Ú#test_from_json_string_one_rectangleñ   s      %     z=TestBase_from_json_string.test_from_json_string_one_rectanglec                C   s„   i  d  d  6d  d  6d  d  6d d  6d	 d
+ 6i  d
+ d  6d 
+ d  6d
+ d  6d 
+ d  6d  d
+ 6g  }  t  j  |  ƒ  }  t  j  |  ƒ  }  |  j  |  |  ƒ   d  S) Nry   r    r?   rz   rN   r{   r@   r‚   rA   Ú yéb   r-   r    r    r%   ) r    rE   r|   r   ) r	   r~   r   r€   r 
+   r 
+   r
+   Ú$test_from_json_string_two_rectangles÷   s
+     & ,     z>TestBase_from_json_string.test_from_json_string_two_rectanglesc                C   sP   i  d  d  6d  d  6d  d  6g  }  t  j  |  ƒ  }  t  j  |  ƒ  }  |  j  |  |  ƒ   d  S)Nry   r    r?   Ú sizerN   r{   ) r    rE   r|   r   ) r	   r~   r   r€   r 
+   r 
+   r
+   Ú test_from_json_string_one_square    s            z:TestBase_from_json_string.test_from_json_string_one_squarec                C   sh   i  d  d  6d  d  6d  d  6i  d d  6d  d  6d d  6g  }  t  j  |  ƒ  }  t  j  |  ƒ  }  |  j  |  |  ƒ   d  S)	Nry   r    r?   r‡   rN   r{   r@   r    ) r    rE   r|   r   ) r	   r~   r   r€   r 
+   r 
+   r
+   Ú!test_from_json_string_two_squares    s
+             z;TestBase_from_json_string.test_from_json_string_two_squaresc                C   s    |  j  g  t  j  d  ƒ  ƒ   d  S) N) r   r    r|   ) r	   r 
+   r 
+   r
+   Ú test_from_json_string_None    s      z4TestBase_from_json_string.test_from_json_string_Nonec                C   s    |  j  g  t  j  d  ƒ  ƒ   d  S) Nz []) r   r    r|   ) r	   r 
+   r 
+   r
+   Ú test_from_json_string_empty_list    s      z:TestBase_from_json_string.test_from_json_string_empty_listc                C   s$   |  j  t  ƒ     t  j  ƒ   Wd  QXd  S) N) r    r8   r    r|   ) r	   r 
+   r 
+   r
+   Ú test_from_json_string_no_args    s        z7TestBase_from_json_string.test_from_json_string_no_argsc            
+   C   s*   |  j  t  ƒ     t  j  g  d  ƒ   Wd  QXd  S) Nr    ) r    r8   r    r|   ) r	   r 
+   r 
+   r
+   Ú'test_from_json_string_more_than_one_arg    s        zATestBase_from_json_string.test_from_json_string_more_than_one_argN)
+r:   r;   r<   r=   r   rƒ   r†   rˆ   r‰   rŠ   r‹   rŒ   r   r 
+   r 
+   r 
+   r
+   rx   è   s     
+    
+  
+  
+	 
+  
+	 
+  
+  
+ rx   c                @   sv   e  Z  d  Z  d  Z  d  d  „  Z  d  d  „  Z  d  d „  Z  d  d	 „  Z d
+ d
+ „  Z  d 
+ d
+ „  Z	 d 
+ d  „  Z
+ d  d  „  Z
+ d  S) Ú TestBase_createz2Unittests for testing create method of Base class.c                C   sM   t  d  d  d  d  d  ƒ  }  |  j  ƒ  }  t  j  |    }  |  j  d  t  |  ƒ  ƒ   d  S)Nr%   r-   r    r    r@   z [Rectangle] (7) 1/2 - 3/5) r    rF   Ú creater   rC   ) r	   rP   Ú
+r1_dictionaryrQ   r 
+   r 
+   r
+   Ú test_create_rectangle_original!   s         
+   z.TestBase_create.test_create_rectangle_originalc                C   sM   t  d  d  d  d  d  ƒ  }  |  j  ƒ  }  t  j  |    }  |  j  d  t  |  ƒ  ƒ   d  S)Nr%   r¬   r    r    r@   z [Rectangle] (7) 1/2 - 3/5) r    rF   r   r   rC   ) r	   rP   r   rQ   r 
+   r 
+   r
+   Ú test_create_rectangle_new'   s         
+   z)TestBase_create.test_create_rectangle_newc                C   sG   t  d  d  d  d  d  ƒ  }  |  j  ƒ  }  t  j  |    }  |  j  |  |  ƒ   d  S) Nr%   r¬   r    r    r@   ) r    rF   r   Ú
+assertIsNot) r	   rP   r   rQ   r 
+   r 
+   r
+   Ú test_create_rectangle_is-   s         
+   z(TestBase_create.test_create_rectangle_isc                C   sG   t  d  d  d  d  d  ƒ  }  |  j  ƒ  }  t  j  |    }  |  j  |  |  ƒ   d  S) Nr%   r¬   r    r    r@   ) r    rF   r   r6   ) r	   rP   r   rQ   r 
+   r 
+   r
+   Ú test_create_rectangle_equals3   s         
+   z,TestBase_create.test_create_rectangle_equalsc                C   sJ   t  d  d  d  d  ƒ  }  |  j  ƒ  }  t  j  |    }  |  j  d  t  |  ƒ  ƒ   d  S) Nr%   r¬   r    r@   z [Square] (7) 5/1 - 3) r    rF   r   r   rC   ) r	   rZ   Ú
+s1_dictionaryr[   r 
+   r 
+   r
+   Ú test_create_square_original9   s         
+   z+TestBase_create.test_create_square_originalc                C   sJ   t  d  d  d  d  ƒ  }  |  j  ƒ  }  t  j  |    }  |  j  d  t  |  ƒ  ƒ   d  S) Nr%   r¬   r    r@   z [Square] (7) 5/1 - 3) r    rF   r   r   rC   ) r	   rZ   r–   r[   r 
+   r 
+   r
+   Ú test_create_square_new?   s         
+   z&TestBase_create.test_create_square_newc                C   sD   t  d  d  d  d  ƒ  }  |  j  ƒ  }  t  j  |    }  |  j  |  |  ƒ   d  S) Nr%   r¬   r    r@   ) r    rF   r   r“   ) r	   rZ   r–   r[   r 
+   r 
+   r
+   Ú test_create_square_isE   s         
+   z%TestBase_create.test_create_square_isc                C   sD   t  d  d  d  d  ƒ  }  |  j  ƒ  }  t  j  |    }  |  j  |  |  ƒ   d  S) Nr%   r¬   r    r@   ) r    rF   r   r6   ) r	   rZ   r–   r[   r 
+   r 
+   r
+   Ú test_create_square_equalsK   s         
+   z)TestBase_create.test_create_square_equalsN) 
+r:   r;   r<   r=   r‘   r’   r”   r•   r—   r˜   r™   rš   r 
+   r 
+   r 
+   r
+   rŽ       s     
+    
+  
+  
+  
+  
+  
+  
+ rŽ   c                @   sˆ   e  Z  d  Z  d  Z  e  d  d  „  ƒ  Z  d  d  „  Z  d  d „  Z d  d	 „  Z  d
+ d
+ „  Z	 d 
+ d
+ „  Z
+ d 
+ d  „  Z
+ d  d  „  Z 
+ d  d  „  Z
+ d  S) Ú TestBase_load_from_filez:Unittests for testing load_from_file_method of Base class.c                C   sP   y  t  j  d  ƒ   Wn   t  k
+ r%    Yn  Xy  t  j  d  ƒ   Wn   t  k
+ rK    Yn  Xd  S) z Delete any created files.z 
+Rectangle.jsonz
+Square.jsonN) rb   rc   rd   ) r	   r 
+   r 
+   r
+   re   U   s          
+       
+ z TestBase_load_from_file.tearDownc                C   ss   t  d  d  d  d  d  ƒ  }  t  d  d  d d  d  ƒ  }  t  j  |  |  g  ƒ   t  j  ƒ  }  |  j  t  |  ƒ  t  |  d	  ƒ  ƒ   d  S)
+Nr?   r@   r    rA   r    rN   r¬   rB   r    ) r    rf   Ú 
+load_from_filer   rC   ) r	   rP   rQ   Ú list_rectangles_outputr 
+   r 
+   r
+   Ú#test_load_from_file_first_rectanglea   s
+            
+ z;TestBase_load_from_file.test_load_from_file_first_rectanglec                C   ss   t  d  d  d  d  d  ƒ  }  t  d  d  d d  d  ƒ  }  t  j  |  |  g  ƒ   t  j  ƒ  }  |  j  t  |  ƒ  t  |  d   ƒ  ƒ   d  S)	Nr?   r@   r    rA   r    rN   r-   rB   ) r    rf   rœ   r   rC   ) r	   rP   rQ   r   r 
+   r 
+   r
+   Ú$test_load_from_file_second_rectangleh   s
+            
+ z<TestBase_load_from_file.test_load_from_file_second_rectanglec                C   ss   t  d  d  d  d  d  ƒ  }  t  d  d  d d  d  ƒ  }  t  j  |  |  g  ƒ   t  j  ƒ  }  |  j  t  d	 d
+ „  |  Dƒ  ƒ  ƒ   d  S)
+Nr?   r@   r    rA   r    rN   r-   rB   c                s   s!   |  ]  }  t  |  ƒ  t  k  V q  d  S) N) rD   r    ) Ú .0Ú objr 
+   r 
+   r
+   ú	<genexpr>t   s      zNTestBase_load_from_file.test_load_from_file_rectangle_types.<locals>.<genexpr>) r    rf   rœ   rJ   Ú all) r	   rP   rQ   Ú outputr 
+   r 
+   r
+   Ú#test_load_from_file_rectangle_typeso   s
+            
+ z;TestBase_load_from_file.test_load_from_file_rectangle_typesc                C   sm   t  d  d  d  d  ƒ  }  t  d  d  d  d  ƒ  }  t  j  |  |  g  ƒ   t  j  ƒ  }  |  j  t  |  ƒ  t  |  d   ƒ  ƒ   d  S)Nr-   r    r%   rq   r    r    ) r    rf   rœ   r   rC   ) r	   rZ   r[   Ú list_squares_outputr 
+   r 
+   r
+   Ú test_load_from_file_first_squarev   s
+            
+ z8TestBase_load_from_file.test_load_from_file_first_squarec                C   sm   t  d  d  d  d  ƒ  }  t  d  d  d  d  ƒ  }  t  j  |  |  g  ƒ   t  j  ƒ  }  |  j  t  |  ƒ  t  |  d   ƒ  ƒ   d  S) Nr-   r    r%   rq   r    ) r    rf   rœ   r   rC   ) r	   rZ   r[   r¦   r 
+   r 
+   r
+   Ú!test_load_from_file_second_square}   s
+            
+ z9TestBase_load_from_file.test_load_from_file_second_squarec                C   sm   t  d  d  d  d  ƒ  }  t  d  d  d  d  ƒ  }  t  j  |  |  g  ƒ   t  j  ƒ  }  |  j  t  d  d „  |  Dƒ  ƒ  ƒ   d  S) Nr-   r    r%   rq   r    c                s   s!   |  ]  }  t  |  ƒ  t  k  V q  d  S) N) rD   r    ) r    r¡   r 
+   r 
+   r
+   r¢   ‰   s      zKTestBase_load_from_file.test_load_from_file_square_types.<locals>.<genexpr>) r    rf   rœ   rJ   r£   ) r	   rZ   r[   r¤   r 
+   r 
+   r
+   Ú test_load_from_file_square_types„   s
+            
+ z8TestBase_load_from_file.test_load_from_file_square_typesc                C   s    t  j  ƒ  }  |  j  g  |  ƒ   d  S) N) r    rœ   r   ) r	   r¤   r 
+   r 
+   r
+   Ú test_load_from_file_no_file‹   s       
+ z3TestBase_load_from_file.test_load_from_file_no_filec            
+   C   s*   |  j  t  ƒ     t  j  g  d  ƒ   Wd  QXd  S) Nr    ) r    r8   r    rœ   ) r	   r 
+   r 
+   r
+   Ú%test_load_from_file_more_than_one_arg   s        z=TestBase_load_from_file.test_load_from_file_more_than_one_argN) 
+r:   r;   r<   r=   rw   re   rž   rŸ   r¥   r§   r¨   r©   rª   r«   r 
+   r 
+   r 
+   r
+   r›   R   s     
+     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ r›   c                @   s    e  Z  d  Z  d  Z  e  d  d  „  ƒ  Z  d  d  „  Z  d  d „  Z d  d	 „  Z  d
+ d
+ „  Z	 d 
+ d
+ „  Z
+ d 
+ d  „  Z
+ d  d  „  Z 
+ d  d  „  Z
+ d  d  „  Z 
+ d  d  „  Z  d  S) Ú TestBase_save_to_file_csvz<Unittests for testing save_to_file_csv method of Base class.c                C   sv   y  t  j  d  ƒ   Wn   t  k
+ r%    Yn  Xy  t  j  d  ƒ   Wn   t  k
+ rK    Yn  Xy  t  j  d  ƒ   Wn   t  k
+ rq    Yn  Xd  S) z Delete any created files.z
+Rectangle.csvz
+Square.csvz Base.csvN) rb   rc   rd   ) r	   r 
+   r 
+   r
+   re   —   s          
+       
+       
+ z"TestBase_save_to_file_csv.tearDownc            
+   C   sZ   t  d  d  d  d  d  ƒ  }  t  j  |  g  ƒ   t  d  d ƒ    }  |  j  d  |  j  ƒ  ƒ   Wd  QXd  S)	Nr?   r@   r    rA   r-   z
+Rectangle.csvrG   z
+5,10,7,2,8) r    Ú save_to_file_csvrg   rJ   rh   ) r	   rG   ri   r 
+   r 
+   r
+   Ú#test_save_to_file_csv_one_rectangle§   s            z=TestBase_save_to_file_csv.test_save_to_file_csv_one_rectanglec            
+   C   su   t  d  d  d  d  d  ƒ  }  t  d  d  d d  d  ƒ  }  t  j  |  |  g  ƒ   t  d	 d
+ ƒ    }  |  j  d
+ |  j  ƒ  ƒ   Wd  QXd  S) 
+Nr?   r@   r    rA   r-   rN   r    r%   z
+Rectangle.csvrG   z 5,10,7,2,8
+2,4,1,2,3) r    r­   rg   rJ   rh   ) r	   rP   rQ   ri   r 
+   r 
+   r
+   Ú$test_save_to_file_csv_two_rectangles­   s
+             z>TestBase_save_to_file_csv.test_save_to_file_csv_two_rectanglesc            
+   C   sW   t  d  d  d  d  ƒ  }  t  j  |  g  ƒ   t  d  d  ƒ    }  |  j  d |  j  ƒ  ƒ   Wd  QXd  S) Nr?   r@   r    rA   z
+Square.csvrG   z 8,10,7,2) r    r­   rg   rJ   rh   ) r	   rT   ri   r 
+   r 
+   r
+   Ú test_save_to_file_csv_one_square´   s            z:TestBase_save_to_file_csv.test_save_to_file_csv_one_squarec            
+   C   so   t  d  d  d  d  ƒ  }  t  d  d  d  d  ƒ  }  t  j  |  |  g  ƒ   t  d d  ƒ    }  |  j  d	 |  j  ƒ  ƒ   Wd  QXd  S)
+Nr?   r@   r    rA   r    r%   z
+Square.csvrG   z 8,10,7,2
+3,8,1,2) r    r­   rg   rJ   rh   ) r	   rZ   r[   ri   r 
+   r 
+   r
+   Ú!test_save_to_file_csv_two_squaresº   s
+             z;TestBase_save_to_file_csv.test_save_to_file_csv_two_squaresc            
+   C   sW   t  d  d  d  d  ƒ  }  t  j  |  g  ƒ   t  d  d  ƒ    }  |  j  d |  j  ƒ  ƒ   Wd  QXd  S) Nr?   r@   r    rA   z Base.csvrG   z 8,10,7,2) r    r    r­   rg   rJ   rh   ) r	   rT   ri   r 
+   r 
+   r
+   Ú-test_save_to_file__csv_cls_nameÁ   s            z9TestBase_save_to_file_csv.test_save_to_file__csv_cls_namec            
+   C   s|   t  d  d  d  d  ƒ  }  t  j  |  g  ƒ   t  d  d  d  d  ƒ  }  t  j  |  g  ƒ   t  d d  ƒ    }  |  j  d	 |  j  ƒ  ƒ   Wd  QXd  S)
+Nrq   r    rV   r?   r@   rA   z
+Square.csvrG   z 8,10,7,2) r    r­   rg   rJ   rh   ) r	   rT   ri   r 
+   r 
+   r
+   Ú¬test_save_to_file_csv_overwriteÇ   s 
+               z9TestBase_save_to_file_csv.test_save_to_file_csv_overwritec            
+   C   s?   t  j  d  ƒ   t  d  d  ƒ    }  |  j  d  |  j  ƒ  ƒ   Wd  QXd  S) Nz
+Square.csvrG   z []) r    r­   rg   r   rh   ) r	   ri   r 
+   r 
+   r
+   Ú test_save_to_file__csv_NoneÏ   s      
+   z5TestBase_save_to_file_csv.test_save_to_file__csv_Nonec            
+   C   s?   t  j  g  ƒ   t  d  d  ƒ    }  |  j  d  |  j  ƒ  ƒ   Wd  QXd  S) Nz
+Square.csvrG   z []) r    r­   rg   r   rh   ) r	   ri   r 
+   r 
+   r
+   Ú test_save_to_file_csv_empty_listÔ   s      
+   z:TestBase_save_to_file_csv.test_save_to_file_csv_empty_listc                C   s$   |  j  t  ƒ     t  j  ƒ   Wd  QXd  S) N) r    r8   r    r­   ) r	   r 
+   r 
+   r
+   Ú test_save_to_file_csv_no_argsÙ   s        z7TestBase_save_to_file_csv.test_save_to_file_csv_no_argsc            
+   C   s*   |  j  t  ƒ     t  j  g  d  ƒ   Wd  QXd  S) Nr    ) r    r8   r    r­   ) r	   r 
+   r 
+   r
+   Ú'test_save_to_file_csv_more_than_one_argÝ   s        zATestBase_save_to_file_csv.test_save_to_file_csv_more_than_one_argN) r:   r;   r<   r=   rw   re   r®   r¯   r°   r±   r²   r³   r´   rµ   r¶   r·   r 
+   r 
+   r 
+   r
+   r¬   ”   s     
+      
+  
+ 
+  
+ 
+  
+  
+  
+  
+ r¬   c                @   sˆ   e  Z  d  Z  d  Z  e  d  d  „  ƒ  Z  d  d  „  Z  d  d „  Z d  d	 „  Z  d
+ d
+ „  Z	 d 
+ d
+ „  Z
+ d 
+ d  „  Z
+ d  d  „  Z 
+ d  d  „  Z
+ d  S) Ú TestBase_load_from_file_csvz>Unittests for testing load_from_file_csv method of Base class.c                C   sP   y  t  j  d  ƒ   Wn   t  k
+ r%    Yn  Xy  t  j  d  ƒ   Wn   t  k
+ rK    Yn  Xd  S) z Delete any created files.z
+Rectangle.csvz
+Square.csvN) rb   rc   rd   ) r	   r 
+   r 
+   r
+   re   å   s          
+       
+ z$TestBase_load_from_file_csv.tearDownc                C   ss   t  d  d  d  d  d  ƒ  }  t  d  d  d d  d  ƒ  }  t  j  |  |  g  ƒ   t  j  ƒ  }  |  j  t  |  ƒ  t  |  d	  ƒ  ƒ   d  S)
+Nr?   r@   r    rA   r    rN   r-   rB   r    ) r    r­   Ú load_from_file_csvr   rC   ) r	   rP   rQ   r   r 
+   r 
+   r
+   Ú'test_load_from_file_csv_first_rectangleñ   s
+            
+ zCTestBase_load_from_file_csv.test_load_from_file_csv_first_rectanglec                C   ss   t  d  d  d  d  d  ƒ  }  t  d  d  d d  d  ƒ  }  t  j  |  |  g  ƒ   t  j  ƒ  }  |  j  t  |  ƒ  t  |  d   ƒ  ƒ   d  S)	Nr?   r@   r    rA   r    rN   r-   rB   ) r    r­   r¹   r   rC   ) r	   rP   rQ   r   r 
+   r 
+   r
+   Ú(test_load_from_file_csv_second_rectangleø   s
+            
+ zDTestBase_load_from_file_csv.test_load_from_file_csv_second_rectanglec                C   ss   t  d  d  d  d  d  ƒ  }  t  d  d  d d  d  ƒ  }  t  j  |  |  g  ƒ   t  j  ƒ  }  |  j  t  d	 d
+ „  |  Dƒ  ƒ  ƒ   d  S)
+Nr?   r@   r    rA   r    rN   r-   rB   c                s   s!   |  ]  }  t  |  ƒ  t  k  V q  d  S) N) rD   r    ) r    r¡   r 
+   r 
+   r
+   r¢       s      zVTestBase_load_from_file_csv.test_load_from_file_csv_rectangle_types.<locals>.<genexpr>) r    r­   r¹   rJ   r£   ) r	   rP   rQ   r¤   r 
+   r 
+   r
+   Ú'test_load_from_file_csv_rectangle_typesÿ   s
+            
+ zCTestBase_load_from_file_csv.test_load_from_file_csv_rectangle_typesc                C   sm   t  d  d  d  d  ƒ  }  t  d  d  d  d  ƒ  }  t  j  |  |  g  ƒ   t  j  ƒ  }  |  j  t  |  ƒ  t  |  d   ƒ  ƒ   d  S)Nr-   r    r%   rq   r    r    ) r    r­   r¹   r   rC   ) r	   rZ   r[   r¦   r 
+   r 
+   r
+   Ú$test_load_from_file_csv_first_square    s
+            
+ z@TestBase_load_from_file_csv.test_load_from_file_csv_first_squarec                C   sm   t  d  d  d  d  ƒ  }  t  d  d  d  d  ƒ  }  t  j  |  |  g  ƒ   t  j  ƒ  }  |  j  t  |  ƒ  t  |  d   ƒ  ƒ   d  S) Nr-   r    r%   rq   r    ) r    r­   r¹   r   rC   ) r	   rZ   r[   r¦   r 
+   r 
+   r
+   Ú%test_load_from_file_csv_second_square
+   s
+            
+ zATestBase_load_from_file_csv.test_load_from_file_csv_second_squarec                C   sm   t  d  d  d  d  ƒ  }  t  d  d  d  d  ƒ  }  t  j  |  |  g  ƒ   t  j  ƒ  }  |  j  t  d  d „  |  Dƒ  ƒ  ƒ   d  S) Nr-   r    r%   rq   r    c                s   s!   |  ]  }  t  |  ƒ  t  k  V q  d  S) N) rD   r    ) r    r¡   r 
+   r 
+   r
+   r¢       s      zSTestBase_load_from_file_csv.test_load_from_file_csv_square_types.<locals>.<genexpr>) r    r­   r¹   rJ   r£   ) r	   rZ   r[   r¤   r 
+   r 
+   r
+   Ú$test_load_from_file_csv_square_types    s
+            
+ z@TestBase_load_from_file_csv.test_load_from_file_csv_square_typesc                C   s    t  j  ƒ  }  |  j  g  |  ƒ   d  S) N) r    r¹   r   ) r	   r¤   r 
+   r 
+   r
+   Ú¬test_load_from_file_csv_no_file    s       
+ z;TestBase_load_from_file_csv.test_load_from_file_csv_no_filec            
+   C   s*   |  j  t  ƒ     t  j  g  d  ƒ   Wd  QXd  S) Nr    ) r    r8   r    r¹   ) r	   r 
+   r 
+   r    Ú)test_load_from_file_csv_more_than_one_arg-   s        zETestBase_load_from_file_csv.test_load_from_file_csv_more_than_one_argN) 
+r:   r;   r<   r=   rw   re   rº   r»   r¼   r½   r¾   r¿   rÀ   rÁ   r 
+   r 
+   r 
+   r    r¸   â   s     
+     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ r¸   Ú __main__) r=   rb   Z unittestZ
+models.baser    Z models.rectangler    Z models.squarer    Ú TestCaser    r>   ra   rx   rŽ   r›   r¬   r¸   r:   Ú mainr 
+   r 
+   r 
+   r    Ú <module>    s       
+  
+        W . N 6 4 B N B 
+ 
+
